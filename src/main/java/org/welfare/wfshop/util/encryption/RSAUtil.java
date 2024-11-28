@@ -1,4 +1,4 @@
-package org.welfare.wfshop.common.encryption;
+package org.welfare.wfshop.util.encryption;
 
 import lombok.extern.slf4j.Slf4j;
 

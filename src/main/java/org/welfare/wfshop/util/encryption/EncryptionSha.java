@@ -1,4 +1,4 @@
-package org.welfare.wfshop.common.encryption;
+package org.welfare.wfshop.util.encryption;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
