@@ -29,30 +29,51 @@ ext {
 }
 
 dependencies {
+
+    // web
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-validation' // NotEmpty
-    implementation 'org.apache.commons:commons-lang3:3.9' // StringUtils
-    implementation 'com.google.guava:guava:28.2-jre' // 컬렉션(Collection) 유틸리티 ,불변 컬렉션(Immutable Collections) ,캐싱(Caching)
-    //implementation 'org.flywaydb:flyway-core:7.10.0'
-
-//    implementation 'org.hibernate:hibernate-ehcache:5.6.15.Final' // Hibernate와 Ehcache 통합
-//    implementation 'org.ehcache:ehcache:3.10.8' // Ehcache 라이브러리
-//    implementation 'org.hibernate:hibernate-jcache:6.2.0.Final'
-//    implementation 'javax.cache:cache-api:1.1.1'
-
-    // MyBatis 관련 의존성
-    //implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2'
+    implementation 'org.springframework.boot:spring-boot-starter-web-services'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
-//    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
-//    implementation 'org.springframework.boot:spring-boot-starter-security'
-//    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-//    implementation 'org.springframework.session:spring-session-core'
-//    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+    // Spring AOP
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
 
-    //implementation 'org.springframework.boot:spring-boot-starter-batch'
-    //implementation 'org.springframework.boot:spring-boot-starter-mail'
+    // JPA and QueryDSL
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    annotationProcessor 'com.querydsl:querydsl-apt'
+    implementation 'com.querydsl:querydsl-jpa'
+
+    // utils
+    implementation 'org.springframework.boot:spring-boot-starter-validation' // NotEmpty
+    implementation 'org.apache.commons:commons-lang3:3.13.0'
+
+    implementation 'com.google.guava:guava:28.2-jre' // 컬렉션(Collection) 유틸리티 ,불변 컬렉션(Immutable Collections) ,캐싱(Caching)
+
+    // Spring Boot Cache, Ehcache
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
+    implementation 'org.ehcache:ehcache:3.10.8'
+
+    // JWT
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    implementation 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5' // JSON 처리용
+
+    // Spring Retry
+    implementation 'org.springframework.retry:spring-retry:1.3.1'
+    implementation 'org.springframework:spring-aspects'
+
+    // 스케줄링 (ShedLock)
+    implementation 'net.javacrumbs.shedlock:shedlock-core:4.44.0'
+    implementation 'net.javacrumbs.shedlock:shedlock-spring:4.44.0'
+    implementation 'net.javacrumbs.shedlock:shedlock-provider-jdbc-template:4.44.0'
+
+    // JSON
+    implementation 'org.json:json:20220924'
+    implementation 'com.zeoflow:jx:1.2.1' // JX 라이브러리는 JSON 데이터를 쉽게 파싱하고 생성할 수 있는 라이브러리
+
+    // ModelMapper
+    implementation 'org.modelmapper:modelmapper:3.1.0'
 
     // retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -78,6 +99,23 @@ dependencies {
     testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
     testImplementation 'org.springframework.security:spring-security-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+
+    // 캐릭터 인코딩 검출
+    implementation 'com.ibm.icu:icu4j:68.2'
+    // 엑셀
+    implementation 'org.apache.poi:poi:4.1.2'
+    implementation 'org.apache.poi:poi-ooxml:4.1.2'
+    // 썸네일 라이브러리
+    implementation 'net.coobird:thumbnailator:0.4.17'
+    implementation 'com.twelvemonkeys.imageio:imageio-jpeg:3.8.2'
+    implementation 'com.twelvemonkeys.imageio:imageio-core:3.8.2'
+    implementation 'com.twelvemonkeys.imageio:imageio:3.8.2'
+
+    // 파일 관련 유틸리티
+    implementation 'org.apache.tika:tika-core:2.4.0'
+    implementation 'org.apache.tika:tika-parsers:2.4.0'
+    implementation 'commons-io:commons-io:2.11.0'
 }
 
 tasks.named('test') {
@@ -89,3 +127,37 @@ tasks.named('asciidoctor') {
     inputs.dir snippetsDir
     dependsOn test
 }
+
+//    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+//    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+//    implementation 'org.springframework.session:spring-session-core'
+//    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+
+//implementation 'org.springframework.boot:spring-boot-starter-batch'
+//implementation 'org.springframework.boot:spring-boot-starter-mail'
+// jpa 2차 캐시
+//    implementation 'org.hibernate:hibernate-jcache:6.2.0.Final'
+//    implementation 'javax.cache:cache-api:1.1.1'
+//    implementation 'org.hibernate:hibernate-ehcache:5.6.15.Final' // Hibernate와 Ehcache 통합
+
+
+// 나이스 아이디 본인인증
+// implementation 'NiceID:NiceID:1.1'
+// 애플 로그인 관련
+//implementation 'org.apache.httpcomponents:httpclient'
+// 모바일 접속 여부 확인
+//implementation 'com.github.ua-parser:uap-java:1.4.3'
+// 결제용 EasyPay
+//implementation 'easypay:easypay:1.0'
+// Spring Session Redis
+//    implementation 'org.springframework.session:spring-session-data-redis'
+//    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+// JSch
+// implementation 'com.github.mwiede:jsch:0.2.21'
+//implementation 'org.flywaydb:flyway-core:7.10.0'
+
+// MyBatis 관련 의존성
+//implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2'
+// Amazon S3
+//implementation 'software.amazon.awssdk:s3:2.28.22'
