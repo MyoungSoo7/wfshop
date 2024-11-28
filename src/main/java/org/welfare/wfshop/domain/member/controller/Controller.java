@@ -5,7 +5,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.welfare.wfshop.domain.member.dto.MemberRequestDto;
 import org.welfare.wfshop.domain.member.dto.MemberResponseDto;
-import org.welfare.wfshop.domain.member.entity.Member;
 import org.welfare.wfshop.domain.member.service.MemberService;
 
 import java.util.List;
