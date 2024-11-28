@@ -2,7 +2,7 @@ package org.welfare.wfshop.entity.education;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.welfare.wfshop.entity.market.InvoiceType;
+import org.welfare.wfshop.entity.order.InvoiceType;
 import org.welfare.wfshop.entity.market.PaymentMethod;
 
 @Entity

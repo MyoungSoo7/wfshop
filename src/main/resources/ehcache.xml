@@ -1,0 +1,18 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.ehcache.org/v3"
+        xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core.xsd">
+
+    <cache alias="default">
+        <expiry>
+            <ttl unit="seconds">3600</ttl> <!-- 캐시 만료 시간 설정 -->
+        </expiry>
+        <heap unit="entries">1000</heap> <!-- 힙 메모리 크기 설정 -->
+    </cache>
+
+  <!--  <cache alias="com.example.entity.MyEntity">
+        <expiry>
+            <ttl unit="seconds">600</ttl> &lt;!&ndash; 특정 엔티티 캐시 만료 시간 &ndash;&gt;
+        </expiry>
+        <heap unit="entries">500</heap>
+    </cache>-->
+</config>

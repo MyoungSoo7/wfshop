@@ -18,6 +18,10 @@ public class TbEducationReviewAnswer {
     @Column(name = "review_seq", nullable = false)
     private Integer reviewSeq; // 리뷰 고유 번호 (tb_education_review.review_seq 참조)
 
+    @OneToOne
+    @JoinColumn(name = "review_seq", referencedColumnName = "review_seq", foreignKey = @ForeignKey(name = "fk_review_seq"))
+    private TbEducationReview tbEducationReview; // tb_education_review와의 관계
+
     @Column(name = "answer_type", length = 25)
     private String answerType; // 답변 유형
 
@@ -33,7 +37,5 @@ public class TbEducationReviewAnswer {
     @Column(name = "reg_date")
     private java.sql.Timestamp regDate; // 등록 일시
 
-    @OneToOne
-    @JoinColumn(name = "review_seq", referencedColumnName = "review_seq", foreignKey = @ForeignKey(name = "fk_review_seq"))
-    private TbEducationReview tbEducationReview; // tb_education_review와의 관계
+
 }
