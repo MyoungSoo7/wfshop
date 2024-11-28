@@ -2,7 +2,6 @@ package org.welfare.wfshop.domain.member.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tb_member_address",
