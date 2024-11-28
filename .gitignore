@@ -37,4 +37,4 @@ out/
 .vscode/
 *.txt
 *.log
-.env
+*.env
