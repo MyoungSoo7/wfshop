@@ -1,2 +1,0 @@
-이 sql 스크립트 보고 comment랑 index랑 크기에 맞게 jpa 테이블 만드는데 @Builder 랑 @AllArgsConstructor 랑  @NoArgsConstructor(access = AccessLevel.PROTECTED) 이거랑 @Getter @Setter 추가하고
-jakarta.persistence.*; 이거로 import 바꾸고 , index에 코멘트 있으면 빼줘, package는 필요없어
