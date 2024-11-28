@@ -2,7 +2,11 @@ package org.welfare.wfshop.domain.member.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.welfare.wfshop.common.AuditEntity;
+
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -15,20 +19,22 @@ import java.time.LocalDateTime;
         indexes = {
                 @Index(name = "idx_name", columnList = "name"),
                 @Index(name = "idx_id", columnList = "id"),
-                @Index(name = "idx_mail", columnList = "mail"),
                 @Index(name = "idx_mobile_no", columnList = "mobile_no")
         }
 )
-public class Member {
+public class Member extends AuditEntity {
 
     @Id
     @Column(name = "member_no", length = 20, nullable = false, unique = true, columnDefinition = "VARCHAR(20) COMMENT '회원 고유 번호 (Primary Key)'")
     private String memberNo;
 
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<DeliveryAddress> deliveryAddresses = new ArrayList<>(); // 배송지 목록
+
     @Column(name = "member_type", length = 6, nullable = false, columnDefinition = "VARCHAR(6) COMMENT '회원 종류 (일반회원/카카오 간편 로그인 등)'")
     private String memberType;
 
-    @Column(name = "member_group", length = 6, nullable = false, columnDefinition = "VARCHAR(6) COMMENT '회원 그룹 (기업회원, 일반회원, 자문의 등)'")
+    @Column(name = "member_group", length = 6, nullable = false, columnDefinition = "VARCHAR(6) COMMENT '회원 그룹 (기업회원, 일반회원, 전문 등)'")
     private String memberGroup;
 
     @Column(name = "app_user_key", length = 200, columnDefinition = "VARCHAR(200) COMMENT '앱 사용자 키 (외부 연동용)'")
@@ -90,6 +96,12 @@ public class Member {
 
     @Column(name = "login_date", columnDefinition = "DATETIME COMMENT '최근 로그인 날짜'")
     private LocalDateTime loginDate;
+
+    @Column(name = "existing_yn", length = 1, columnDefinition = "VARCHAR(1) COMMENT 'Y: 인증 필요, N: 인증 완료된 회원'")
+    private String existingYn;
+
+    @Column(name = "existing_date", columnDefinition = "DATETIME COMMENT '인증 처리 날짜'")
+    private LocalDateTime existingDate;
 
     @Embedded
     private Workplace workplace;

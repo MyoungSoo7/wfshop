@@ -1,3 +1,4 @@
+/*
 package org.welfare.wfshop.domain.member.service;
 
 import org.springframework.stereotype.Service;
@@ -27,3 +28,4 @@ public class MemberService {
     }
 
 }
+*/
