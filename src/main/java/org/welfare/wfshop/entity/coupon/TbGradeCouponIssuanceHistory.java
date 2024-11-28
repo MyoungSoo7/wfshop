@@ -14,6 +14,7 @@ import lombok.*;
         @Index(name = "idx_coupon_seq", columnList = "coupon_seq"),
         @Index(name = "idx_member_no", columnList = "member_no")
 })
+@IdClass(TbGradeCouponIssuanceHistoryId.class) // 복합 키 클래스 지정
 public class TbGradeCouponIssuanceHistory {
 
     @Id

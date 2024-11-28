@@ -13,6 +13,7 @@ import lombok.*;
         @Index(name = "idx_grade_id", columnList = "grade_id"),
         @Index(name = "idx_coupon_seq", columnList = "coupon_seq")
 })
+@IdClass(TbGradeCouponBridgeId.class) // 복합 키 클래스 지정
 public class TbGradeCouponBridge {
 
     @Id

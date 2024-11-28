@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@IdClass(GradeWeeklyHistoryId.class)
 public class GradeWeeklyHistory {
 
     @Id

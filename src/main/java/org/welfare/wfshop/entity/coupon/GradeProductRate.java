@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@IdClass(GradeProductRateId.class) // 복합 키 클래스 지정
 public class GradeProductRate {
 
     @Id

@@ -10,8 +10,8 @@ import java.time.LocalDateTime;
         indexes = {
                 @Index(name = "ix_tb_common_code_detail_sub_code", columnList = "sub_code")
         }
-
 )
+@IdClass(CommonCodeDetailId.class) // 복합 키 클래스 지정
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -20,11 +20,10 @@ import java.time.LocalDateTime;
 public class CommonCodeDetail {
 
     @Id
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "code", referencedColumnName = "code", nullable = false,
-            foreignKey = @ForeignKey(name = "fk_tb_common_code_detail_code_tb_common_code_code"))
-    private CommonCode commonCode; // 공통 코드 외래키 참조
+    @Column(name = "code", length = 6, nullable = false, columnDefinition = "VARCHAR(6) COMMENT '공통 코드'")
+    private String code; // 공통 코드
 
+    @Id
     @Column(name = "sub_code", length = 6, nullable = false, columnDefinition = "VARCHAR(6) COMMENT '세부 코드'")
     private String subCode; // 세부 코드
 
@@ -42,4 +41,9 @@ public class CommonCodeDetail {
 
     @Column(name = "sort", columnDefinition = "INT COMMENT '정렬 순서'")
     private Integer sort; // 정렬 순서
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "code", referencedColumnName = "code", insertable = false, updatable = false,
+            foreignKey = @ForeignKey(name = "fk_tb_common_code_detail_code_tb_common_code_code"))
+    private CommonCode commonCode; // 공통 코드 외래키 참조
 }
