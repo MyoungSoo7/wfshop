@@ -2,6 +2,7 @@ package org.welfare.wfshop.domain.member.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.welfare.wfshop.common.AuditEntity;
 
 @Entity
 @Table(name = "tb_member_address",
@@ -13,7 +14,7 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class DeliveryAddress {
+public class DeliveryAddress extends AuditEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
