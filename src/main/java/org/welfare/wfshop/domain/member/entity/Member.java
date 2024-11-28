@@ -97,6 +97,16 @@ public class Member extends AuditEntity {
     @Column(name = "login_date", columnDefinition = "DATETIME COMMENT '최근 로그인 날짜'")
     private LocalDateTime loginDate;
 
+    @Enumerated(EnumType.STRING)
+    private Status status;
+
+    @Getter
+    @RequiredArgsConstructor
+    public enum Status {
+        ENABLE("활성화"), DISABLE("비활성화");
+        private final String description;
+    }
+
     @Column(name = "existing_yn", length = 1, columnDefinition = "VARCHAR(1) COMMENT 'Y: 인증 필요, N: 인증 완료된 회원'")
     private String existingYn;
 
