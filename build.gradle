@@ -35,23 +35,18 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web-services'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-
-    // Spring AOP
     implementation 'org.springframework.boot:spring-boot-starter-aop'
-
-    // JPA and QueryDSL
+    implementation 'org.springframework.boot:spring-boot-starter-validation' // NotEmpty
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    annotationProcessor 'com.querydsl:querydsl-apt'
     implementation 'com.querydsl:querydsl-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
 
     // utils
-    implementation 'org.springframework.boot:spring-boot-starter-validation' // NotEmpty
     implementation 'org.apache.commons:commons-lang3:3.13.0'
 
     implementation 'com.google.guava:guava:28.2-jre' // 컬렉션(Collection) 유틸리티 ,불변 컬렉션(Immutable Collections) ,캐싱(Caching)
 
     // Spring Boot Cache, Ehcache
-    implementation 'org.springframework.boot:spring-boot-starter-cache'
     implementation 'org.ehcache:ehcache:3.10.8'
 
     // JWT
@@ -75,32 +70,6 @@ dependencies {
     // ModelMapper
     implementation 'org.modelmapper:modelmapper:3.1.0'
 
-    // retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    //기본 네트워크 라이브러리로, HTTP 요청과 응답을 처리 Logging Interceptor는 네트워크 요청과 응답을 로그로 출력  API 요청/응답의 내용을 확인하거나 디버깅
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
-
-    //, MapStruct가 컴파일 타임에 UserMapper 인터페이스의 구현체를 자동으로 생성
-    implementation 'org.mapstruct:mapstruct:1.4.2.Final'
-    annotationProcessor "org.mapstruct:mapstruct-processor:1.4.2.Final"
-    annotationProcessor(
-            'org.projectlombok:lombok',
-            'org.projectlombok:lombok-mapstruct-binding:0.1.0',
-            'org.springframework.boot:spring-boot-configuration-processor'
-    )
-
-    compileOnly 'org.projectlombok:lombok'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
-
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.batch:spring-batch-test'
-    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
-    testImplementation 'org.springframework.security:spring-security-test'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
-
     // 캐릭터 인코딩 검출
     implementation 'com.ibm.icu:icu4j:68.2'
     // 엑셀
@@ -116,6 +85,36 @@ dependencies {
     implementation 'org.apache.tika:tika-core:2.4.0'
     implementation 'org.apache.tika:tika-parsers:2.4.0'
     implementation 'commons-io:commons-io:2.11.0'
+
+    // retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    //기본 네트워크 라이브러리로, HTTP 요청과 응답을 처리 Logging Interceptor는 네트워크 요청과 응답을 로그로 출력  API 요청/응답의 내용을 확인하거나 디버깅
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+
+    //, MapStruct가 컴파일 타임에 UserMapper 인터페이스의 구현체를 자동으로 생성
+    implementation 'org.mapstruct:mapstruct:1.4.2.Final'
+
+    annotationProcessor(
+            'org.projectlombok:lombok',
+            'com.querydsl:querydsl-apt',
+            "org.mapstruct:mapstruct-processor:1.4.2.Final",
+            'org.projectlombok:lombok-mapstruct-binding:0.1.0',
+            'org.springframework.boot:spring-boot-configuration-processor'
+    )
+
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.batch:spring-batch-test'
+    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+
+
 }
 
 tasks.named('test') {
