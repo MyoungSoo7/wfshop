@@ -9,7 +9,7 @@
         <heap unit="entries">1000</heap> <!-- 힙 메모리 크기 설정 -->
     </cache>
 
-  <!--  <cache alias="com.example.entity.MyEntity">
+  <!--  <cache alias="com.example.domain.MyEntity">
         <expiry>
             <ttl unit="seconds">600</ttl> &lt;!&ndash; 특정 엔티티 캐시 만료 시간 &ndash;&gt;
         </expiry>
