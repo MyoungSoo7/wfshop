@@ -29,7 +29,7 @@ public class TbClinicalVideo {
     private String title;
 
     @Lob
-    @Column(name = "content", nullable = false, columnDefinition = "TEXT COMMENT '비디오 내용'")
+    @Column(name = "content", nullable = false, columnDefinition = "TEXT")
     private String content;
 
     @Column(name = "field", length = 6, nullable = false, columnDefinition = "CHAR(6) COMMENT '필드 코드'")
@@ -78,7 +78,7 @@ public class TbClinicalVideo {
     private LocalDateTime deleteDate;
 
     @Lob
-    @Column(name = "search_keyword", nullable = false, columnDefinition = "TEXT COMMENT '검색 키워드'")
+    @Column(name = "search_keyword", nullable = false, columnDefinition = "TEXT")
     private String searchKeyword;
 
     @Column(name = "video_code", length = 300, columnDefinition = "VARCHAR(300) COMMENT '비디오 코드'")

@@ -53,11 +53,11 @@ public class BoardQuestion {
     private String zip;
 
     @Lob
-    @Column(name = "content", columnDefinition = "TEXT COMMENT '문의 내용'")
+    @Column(name = "content", columnDefinition = "TEXT")
     private String content;
 
     @Lob
-    @Column(name = "answer_content", columnDefinition = "TEXT COMMENT '답변 내용'")
+    @Column(name = "answer_content", columnDefinition = "TEXT")
     private String answerContent;
 
     @Column(name = "reg_date", columnDefinition = "TIMESTAMP COMMENT '문의 등록 시간'")

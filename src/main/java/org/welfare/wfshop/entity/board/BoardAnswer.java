@@ -33,7 +33,7 @@ public class BoardAnswer {
     private BoardCommon board; // 참조하는 엔티티
 
     @Lob
-    @Column(name = "answer_content", nullable = false, columnDefinition = "TEXT COMMENT '답변 내용'")
+    @Column(name = "answer_content", nullable = false, columnDefinition = "TEXT")
     private String answerContent;
 
     @Column(name = "reg_date", columnDefinition = "TIMESTAMP COMMENT '등록 시간'")

@@ -29,6 +29,6 @@ public class ApiLog {
     private String orderProductCode;
 
     @Lob
-    @Column(name = "apijson", columnDefinition = "LONGTEXT COMMENT 'API 응답 또는 요청 JSON 데이터(원본 데이터 저장)'")
+    @Column(name = "apijson", columnDefinition = "LONGTEXT")
     private String apiJson;
 }

@@ -26,7 +26,7 @@ public class TbClinicalCounsel {
     private Integer clinicalCounselNo;
 
     @Lob
-    @Column(name = "content", nullable = false, columnDefinition = "MEDIUMTEXT COMMENT '상담 내용'")
+    @Column(name = "content", nullable = false, columnDefinition = "MEDIUMTEXT")
     private String content;
 
     @Column(name = "reg_date", columnDefinition = "TIMESTAMP COMMENT '등록일'")

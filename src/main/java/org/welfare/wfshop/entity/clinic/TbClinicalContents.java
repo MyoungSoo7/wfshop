@@ -29,14 +29,14 @@ public class TbClinicalContents {
     private String title;
 
     @Lob
-    @Column(name = "content", nullable = false, columnDefinition = "MEDIUMTEXT COMMENT '콘텐츠 본문'")
+    @Column(name = "content", nullable = false, columnDefinition = "MEDIUMTEXT")
     private String content;
 
     @Column(name = "contents_type", length = 6, nullable = false, columnDefinition = "CHAR(6) COMMENT '콘텐츠 유형 코드'")
     private String contentsType;
 
     @Lob
-    @Column(name = "search_keyword", nullable = false, columnDefinition = "MEDIUMTEXT COMMENT '검색 키워드'")
+    @Column(name = "search_keyword", nullable = false, columnDefinition = "MEDIUMTEXT")
     private String searchKeyword;
 
     @Column(name = "use_yn", length = 1, nullable = false, columnDefinition = "CHAR(1) COMMENT '사용 여부 (Y: 사용, N: 미사용)'")

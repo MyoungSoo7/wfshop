@@ -33,7 +33,7 @@ public class MarketReview {
     @Column(name = "order_product_code", length = 20, nullable = false, columnDefinition = "VARCHAR(20) COMMENT '주문상품 번호'")
     private String orderProductCode;
 
-    @Column(name = "content", nullable = false, columnDefinition = "TEXT COMMENT '리뷰 내용'")
+    @Column(name = "content", nullable = false, columnDefinition = "TEXT")
     private String content;
 
     @Column(name = "score", columnDefinition = "INT DEFAULT 0 COMMENT '별표점수'")

@@ -28,7 +28,7 @@ public class BiztalkList {
     private String telephoneNo;
 
     @Lob
-    @Column(name = "talk_content", columnDefinition = "TEXT COMMENT '발송 내용 (비즈톡 메시지 본문)'")
+    @Column(name = "talk_content", columnDefinition = "TEXT")
     private String talkContent;
 
     @Column(name = "talk_result", length = 50, columnDefinition = "VARCHAR(50) COMMENT '전송 결과 (예: 성공, 실패, 대기 중)'")

@@ -20,6 +20,6 @@ public class SpringSessionAttributes {
     private String attributeName;
 
     @Lob
-    @Column(name = "ATTRIBUTE_BYTES", nullable = false, columnDefinition = "BLOB COMMENT '세션 속성의 값을 직렬화된 바이너리 데이터로 저장'")
+    @Column(name = "ATTRIBUTE_BYTES", nullable = false, columnDefinition = "BLOB")
     private byte attributeBytes;
 }

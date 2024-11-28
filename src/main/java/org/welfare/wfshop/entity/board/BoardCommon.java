@@ -32,7 +32,7 @@ public class BoardCommon {
     private String title;
 
     @Lob
-    @Column(name = "content", nullable = false, columnDefinition = "TEXT COMMENT '게시글 내용'")
+    @Column(name = "content", nullable = false, columnDefinition = "TEXT")
     private String content;
 
     @Column(name = "reg_date", columnDefinition = "TIMESTAMP COMMENT '게시글 등록 시간'")

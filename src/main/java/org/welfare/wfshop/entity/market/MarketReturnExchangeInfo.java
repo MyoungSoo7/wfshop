@@ -73,6 +73,6 @@ public class MarketReturnExchangeInfo {
     @Column(name = "cancel_reason", length = 6, columnDefinition = "VARCHAR(6) COMMENT '취소 사유'")
     private String cancelReason;
 
-    @Column(name = "cancel_detail", columnDefinition = "LONGTEXT COMMENT '취소 상세 내용'")
+    @Column(name = "cancel_detail", columnDefinition = "LONGTEXT")
     private String cancelDetail;
 }

@@ -50,18 +50,18 @@ public class Market  {
     private String promotionYn;
 
     @Lob
-    @Column(name = "product_description", columnDefinition = "LONGTEXT COMMENT '상품 상세 설명'")
+    @Column(name = "product_description", columnDefinition = "LONGTEXT")
     private String productDescription;
 
     @Lob
-    @Column(name = "easy_description", columnDefinition = "LONGTEXT COMMENT '간단 설명'")
+    @Column(name = "easy_description", columnDefinition = "LONGTEXT")
     private String easyDescription;
 
     @Lob
-    @Column(name = "mobile_description", columnDefinition = "LONGTEXT COMMENT '모바일 설명'")
+    @Column(name = "mobile_description", columnDefinition = "LONGTEXT")
     private String mobileDescription;
 
-    @Column(name = "pay_price", nullable = false, columnDefinition = "INT UNSIGNED COMMENT '상품 가격'")
+    @Column(name = "pay_price", nullable = false, columnDefinition = "INT")
     private Integer payPrice;
 
     @Column(name = "reg_date", nullable = false, updatable = false, columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '상품 등록일'")
