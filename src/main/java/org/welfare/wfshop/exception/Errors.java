@@ -1,4 +1,4 @@
-package org.welfare.wfshop.common;
+package org.welfare.wfshop.exception;
 
 
 import lombok.AccessLevel;

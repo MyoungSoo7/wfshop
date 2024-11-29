@@ -1,4 +1,4 @@
-package org.welfare.wfshop.common;
+package org.welfare.wfshop.util.jwt;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
