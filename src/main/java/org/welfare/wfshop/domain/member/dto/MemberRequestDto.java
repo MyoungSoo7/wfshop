@@ -2,7 +2,6 @@ package org.welfare.wfshop.domain.member.dto;
 
 import lombok.*;
 import org.welfare.wfshop.domain.member.entity.Member;
-
 import java.time.LocalDateTime;
 
 @Getter
@@ -38,7 +37,6 @@ public class MemberRequestDto {
     private Member.Status status; // 회원 상태
     private String existingYn; // 인증 여부
     private LocalDateTime existingDate; // 인증 처리 날짜
-
     private WorkplaceDto workplace; // 직장 정보
 
     @Getter

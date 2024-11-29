@@ -44,7 +44,7 @@ dependencies {
     // utils
     implementation 'org.apache.commons:commons-lang3:3.13.0'
 
-    implementation 'com.google.guava:guava:28.2-jre' // 컬렉션(Collection) 유틸리티 ,불변 컬렉션(Immutable Collections) ,캐싱(Caching)
+    implementation 'com.google.guava:guava:28.2-jre' // 컬렉션(Collection) 유틸리티 ,불변 컬렉션(Immutable Collections) ,캐싱
 
     // Spring Boot Cache, Ehcache
     implementation 'org.ehcache:ehcache:3.10.8'
@@ -153,6 +153,7 @@ tasks.named('asciidoctor') {
 // Spring Session Redis
 //    implementation 'org.springframework.session:spring-session-data-redis'
 //    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+      //implementation 'org.redisson:redisson-spring-boot-starter:3.20.0'
 // JSch
 // implementation 'com.github.mwiede:jsch:0.2.21'
 //implementation 'org.flywaydb:flyway-core:7.10.0'
